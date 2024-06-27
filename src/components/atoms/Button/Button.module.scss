@@ -1,0 +1,300 @@
+.button {
+    // Reset
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+    border: none;
+
+    // Styles
+    border: solid;
+    border-radius: var(--border-radius);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    cursor: pointer;
+    text-decoration: none;
+    max-width: 100%;
+    transition: color var(--transition-speed) var(--transition-timing),
+        background-color var(--transition-speed) var(--transition-timing),
+        border-color var(--transition-speed) var(--transition-timing),
+        outline-color var(--transition-speed) var(--transition-timing);
+    text-decoration: none;
+
+    &:focus-visible {
+        outline: var(--outline-width) solid var(--outline-clr);
+        outline-offset: var(--outline-offset);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+/* Padding: Primary & Secondary & Tertiary & Header */
+.primary,
+.secondary,
+.tertiary,
+.header {
+    &.small {
+        padding: 0.375rem;
+
+        /* If has children and has icon */
+        &:not(.no-children):has(.icon) {
+            &.icon-left {
+                padding: 0.375rem 0.375rem 0.375rem 0.125rem;
+            }
+
+            &.icon-right {
+                padding: 0.375rem 0.125rem 0.375rem 0.375rem;
+            }
+        }
+    }
+
+    &.large {
+        padding: 0.375rem 1rem;
+
+        /* If has children and has icon */
+        &:not(.no-children):has(.icon) {
+            &.icon-left {
+                padding: 0.375rem 1rem 0.375rem 0.75rem;
+            }
+
+            &.icon-right {
+                padding: 0.375rem 0.75rem 0.375rem 1rem;
+            }
+        }
+    }
+}
+
+/* Primary */
+.primary {
+    background-color: var(--clr-black);
+    border: var(--clr-black) var(--border-width) solid;
+    color: var(--clr-white);
+    text-decoration: none;
+
+    &:visited,
+    &:active {
+        text-decoration: none;
+        color: var(--clr-white);
+    }
+
+    &:hover {
+        text-decoration: none;
+        background-color: var(--clr-hover);
+        border: var(--clr-hover) var(--border-width) solid;
+    }
+
+    &.button:disabled {
+        background-color: var(--clr-disabled);
+        border: var(--clr-disabled) var(--border-width) solid;
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--clr-disabled);
+            border: var(--clr-disabled) var(--border-width) solid;
+        }
+    }
+}
+
+/* Secondary */
+.secondary {
+    border: var(--clr-primary-blue) var(--border-width) solid;
+    background-color: var(--clr-white);
+    color: var(--clr-primary-blue);
+    text-decoration: none;
+
+    &:visited,
+    &:active {
+        text-decoration: none;
+        color: var(--clr-primary-blue);
+    }
+
+    &:hover {
+        border-color: var(--clr-primary-blue);
+        background-color: var(--clr-primary-blue);
+        color: var(--clr-white);
+    }
+
+    &.button:disabled {
+        background-color: var(--clr-white);
+        color: var(--clr-disabled);
+        border: var(--clr-disabled) var(--border-width) solid;
+
+        &:hover,
+        &:focus {
+            background-color: var(--clr-white);
+            color: var(--clr-disabled);
+            border: var(--clr-disabled) var(--border-width) solid;
+        }
+    }
+}
+
+/* Tertiary */
+.tertiary {
+    border: var(--clr-grey-400) var(--border-width) solid;
+    background-color: var(--clr-white);
+    color: var(--clr-primary-blue);
+    text-decoration: none;
+
+    &:visited,
+    &:active {
+        text-decoration: none;
+        color: var(--clr-primary-blue);
+    }
+
+    &:hover {
+        background-color: var(--clr-white);
+        border: var(--clr-primary-blue) var(--border-width) solid;
+        color: var(--clr-primary-blue);
+    }
+
+    &.button:disabled {
+        background-color: var(--clr-white);
+        color: var(--clr-disabled);
+        border: var(--clr-disabled) var(--border-width) solid;
+
+        &:hover,
+        &:focus {
+            background-color: var(--clr-white);
+            color: var(--clr-disabled);
+            border: var(--clr-disabled) var(--border-width) solid;
+        }
+    }
+}
+
+/* Header */
+.header {
+    border: 0;
+    border-radius: var(--border-radius);
+    color: var(--clr-primary-blue);
+    font-size: 1.25rem;
+    text-decoration: none;
+
+    &:visited,
+    &:active {
+        text-decoration: none;
+        color: var(--clr-primary-blue);
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        text-underline-offset: 0.25em;
+    }
+
+    &.active {
+        background-color: var(--clr-active);
+        color: var(--clr-white);
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}
+
+/* Wrapper */
+.wrapper {
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
+
+/* If wrapper button only has an icon */
+.button.no-children.wrapper:has(.icon) {
+    display: flex;
+    align-items: center;
+}
+
+/* Link and Inline-link and back */
+.inline-link,
+.link,
+.back {
+    cursor: pointer;
+    display: inline;
+    color: var(--clr-inline-link);
+    text-decoration: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+
+    &:disabled {
+        color: var(--clr-grey-300);
+    }
+
+    &::after {
+        content: "";
+        height: 1px;
+        background-color: currentColor;
+        width: calc(100% - 0.25em);
+        bottom: 0;
+        right: 0;
+        position: absolute;
+    }
+
+    &.icon-right::after {
+        left: 0;
+        right: auto;
+    }
+
+    &.no-icon::after {
+        width: 100%;
+    }
+
+    &:active,
+    &:visited {
+        color: var(--clr-inline-link);
+        text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: var(--clr-primary-blue);
+    }
+}
+
+/* Link and back */
+.link,
+.return {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+    width: fit-content;
+    gap: 0;
+}
+
+.return {
+    margin-left: -0.4rem;
+    white-space: nowrap;
+
+    .icon {
+        margin: 0;
+    }
+
+    &::after {
+        width: calc(100% - 1.45em);
+    }
+}
+
+/* Icon */
+.icon {
+    margin: 0 0.25rem 0 0;
+}
+
+/* If icon is positioned right */
+.button.icon-right .icon {
+    margin: 0 0 0 0.25rem;
+}
+
+/* If button only has an icon center it */
+.button.no-children {
+    .icon {
+        margin: 0 auto;
+    }
+}
