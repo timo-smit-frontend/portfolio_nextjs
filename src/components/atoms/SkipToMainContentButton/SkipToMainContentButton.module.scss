@@ -1,0 +1,14 @@
+.skip-to-main-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, -100%);
+    z-index: 999999;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:focus-visible {
+        transform: translate(0%);
+    }
+}

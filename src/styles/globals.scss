@@ -1,0 +1,46 @@
+@use "./variables" as *;
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+.app {
+    font-size: var(--fnt-size-text);
+    font-style: normal;
+    font-family: var(--fnt);
+    font-weight: var(--fnt-weight-text);
+    line-height: var(--fnt-line-height);
+    color: var(--black);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+p {
+    margin: 0;
+}
+
+.screenreader-only {
+    position: absolute !important;
+    left: -10000px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
