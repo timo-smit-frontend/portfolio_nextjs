@@ -9,6 +9,7 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    transition: 0.3s ease-in-out;
 }
 
 body,
@@ -23,6 +24,7 @@ textarea,
     font-weight: var(--fnt-weight-text);
     line-height: var(--fnt-line-height);
     color: var(--black);
+    background-color: var(--clr-primary-light-grey);
 }
 
 html,

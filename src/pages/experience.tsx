@@ -1,10 +1,10 @@
 /** Functions */
 import { SeoHead } from "@/components/atoms/SeoHead/SeoHead";
 
-export default function Home() {
+export default function Experience() {
     return (
         <>
-            <SeoHead title="Home of Timo Smit" />
+            <SeoHead title="Experience of Timo Smit" />
         </>
     );
 }

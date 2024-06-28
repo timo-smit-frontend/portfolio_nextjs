@@ -1,8 +1,8 @@
 .skip-to-main-content {
     position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(-100%, -100%);
+    left: 0.5rem;
+    top: 0.5rem;
+    transform: translate(-105%, -105%);
     z-index: 999999;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -10,5 +10,7 @@
 
     &:focus-visible {
         transform: translate(0%);
+        outline: var(--clr-focus) solid var(--outline-width);
+        outline-offset: var(--outline-offset);
     }
 }
