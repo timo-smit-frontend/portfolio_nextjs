@@ -15,8 +15,9 @@ export default function VideoHeading(props: VideoHeadingProps) {
     const { title } = props;
     return (
         <div className={`${styles["video-container"]}`}>
-            <video className={`${styles["video"]}`} src={videoBg} autoPlay loop muted />
             <h1 className={`${styles["heading"]}`}>{title}</h1>
+            <div className={`${styles["overlay"]}`}></div>
+            <video className={`${styles["video"]}`} src={videoBg} autoPlay loop muted />
         </div>
     );
 }
