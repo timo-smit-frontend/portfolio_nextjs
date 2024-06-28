@@ -16,40 +16,25 @@
     --symbols: "Material Symbols Outlined";
 
     // Primary color pallette
-    --clr-black: #0f0f0f;
-    --clr-white: #ffffff;
-
-    // Primary color pallette
-    --clr-yellow: #ffd700;
-    --clr-light-yellow: #fffacd;
-    --clr-dark-yellow: #ffb300;
-    --clr-creme: #fafad2;
-    --clr-olive: #808000;
-
-    // Secondary color pallette
-    --clr-blue: #1e90ff;
-    --clr-light-blue: #add8e6;
-    --clr-dark-blue: #00008b;
-    --clr-steel-blue: #4682b4;
-    --clr-ice-blue: #e0ffff;
+    --clr-primary-light-grey: #dce1de;
+    --clr-primary-light-green: #9cc5a1;
+    --clr-primary-green: #49a078;
+    --clr-primary-cyan: #216869;
+    --clr-primary-black: #1f2421;
+    --clr-primary-white: #fff;
 
     // States
     --clr-disabled: #898989;
-    --clr-hover: --clr-yellow;
-    --clr-focus: --clr-steel-blue;
+    --clr-focus: #ffb300;
 
     // Borders
+    --border-width: 2px;
     --border-radius: 6px;
-    --border-width: 1px;
+    --border-clr: var(--clr-cyan);
 
     // Outline
-    --outline-width: 2px;
+    --outline-width: 3px;
     --outline-offset: 3px;
-    --outline-clr: --clr-black;
-
-    // Transitions
-    --transition-speed: 200ms;
-    --transition-timing: ease-in-out;
 
     // Box shadows
     --box-shadow: 0px 3px 6px #00000029;
