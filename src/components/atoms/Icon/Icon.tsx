@@ -1,12 +1,12 @@
 /** Functions */
-import { cn } from '@/lib/cn';
-import { forwardRef } from 'react';
+import { cn } from "@/lib/cn";
+import { forwardRef } from "react";
 
 /** Styles */
-import styles from './Icon.module.scss';
+import styles from "./Icon.module.scss";
 
 /** Types */
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from "react";
 
 type IconProps = {
     /** Name of the icon */
@@ -25,8 +25,8 @@ const Icon = forwardRef<HTMLElement, Readonly<IconProps>>(function Icon(props, r
     if (!name) return null;
 
     return (
-        <i ref={ref} id={id} className={cn([className, styles['icon'], filled && styles['filled']])} {...rest}>
-            <span className={cn([styles['inner']])}>{name}</span>
+        <i ref={ref} id={id} className={cn([className, styles["icon"], filled && styles["filled"]])} {...rest}>
+            <span className={cn([styles["inner"]])}>{name}</span>
         </i>
     );
 });

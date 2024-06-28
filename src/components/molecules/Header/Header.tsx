@@ -1,4 +1,5 @@
 /** Functions */
+import { useState } from "react";
 import Logo from "../../../../public/ts_logo.svg";
 import { Button } from "@/components/atoms/Button/Button";
 import { Container } from "@/components/atoms/Grid/Grid";
@@ -11,18 +12,32 @@ interface HeaderProps {
 }
 
 export default function Header({ id }: HeaderProps) {
+    const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+    const onClickToggleNav = () => {
+        setIsHeaderVisible(!isHeaderVisible);
+    };
+
     return (
         <>
+            <Button
+                id={`${id}-nav-toggle`}
+                className={styles["toggle-nav-button"]}
+                tagName="button"
+                styledAs="wrapper"
+                icon="menu"
+                onClick={onClickToggleNav}
+            />
             <header id={id} className={styles["header"]}>
                 <Button
                     styledAs="wrapper"
-                    id={`${id}-alert-bar-button`}
+                    id={`${id}-close-nav-button`}
                     tagName="button"
-                    // onClick={onClickCloseButton}
+                    onClick={onClickToggleNav}
                     icon="close"
                     iconClassName={styles["icon"]}
+                    className={styles["close-button"]}
                 />
-                <Container>
+                <Container className={styles["container"]}>
                     <Button
                         id={`${id}-home-link`}
                         className={styles["brand-link"]}
