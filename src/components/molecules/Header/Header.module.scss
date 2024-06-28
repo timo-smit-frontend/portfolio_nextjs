@@ -5,12 +5,14 @@
     max-width: 1024px;
     margin: 0 auto;
     width: 100%;
+    position: relative;
+    z-index: 9;
     color: var(--clr-primary-light-grey);
     align-items: center;
 
     .toggle-nav-button {
         .icon {
-            color: var(--clr-primary-green);
+            color: var(--clr-primary-cyan);
 
             &:hover {
                 color: var(--clr-primary-black);
