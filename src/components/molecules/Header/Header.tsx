@@ -6,6 +6,7 @@ import { Container } from "@/components/atoms/Grid/Grid";
 
 /** Styles */
 import styles from "./Header.module.scss";
+import Socials from "../../atoms/Socials/Socials";
 
 interface HeaderProps {
     id: string;
@@ -99,6 +100,7 @@ export default function Header({ id }: HeaderProps) {
                                 </li>
                             </ul>
                         </nav>
+                        <Socials id={`${id}-socials`} />
                     </Container>
                 </Container>
             </header>

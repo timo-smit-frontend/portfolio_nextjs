@@ -28,6 +28,8 @@ type BaseProps = {
     iconClassName?: string;
     /** Check if icon is filled */
     iconFilled?: boolean;
+    /** Check the type of the icon */
+    iconType?: string;
     /** ID */
     id: string;
     /** Two preset padding sizes */
@@ -68,6 +70,7 @@ export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Readonly
         icon,
         iconPosition = "left",
         iconFilled,
+        iconType,
         iconClassName,
         paddingX = "small",
         aria,
@@ -111,6 +114,7 @@ export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Readonly
                 className={cn([styles["icon"], iconClassName])}
                 id={`${id}-icon`}
                 filled={iconFilled}
+                type={iconType}
             />
         );
     };

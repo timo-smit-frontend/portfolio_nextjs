@@ -5,7 +5,7 @@
     max-width: 1024px;
     margin: 0 auto;
     width: 100%;
-    color: var(--clr-primary-white);
+    color: var(--clr-primary-light-grey);
     align-items: center;
 
     .toggle-nav-button {
@@ -24,7 +24,7 @@
         display: block;
         object-fit: contain;
         object-position: left center;
-        fill: var(--clr-primary-green);
+        fill: var(--clr-primary-cyan);
 
         &:hover {
             fill: var(--clr-primary-black);

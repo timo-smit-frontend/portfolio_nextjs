@@ -17,18 +17,33 @@ type IconProps = {
     className?: string;
     /** Icon style */
     filled?: boolean;
+    /** Type of the icon: 'material' or 'custom' */
+    type?: string;
 } & HTMLAttributes<HTMLElement>;
 
 const Icon = forwardRef<HTMLElement, Readonly<IconProps>>(function Icon(props, ref) {
-    const { name, id, className, filled, ...rest } = props;
+    const { name, id, className, filled, type, ...rest } = props;
 
     if (!name) return null;
 
-    return (
-        <i ref={ref} id={id} className={cn([className, styles["icon"], filled && styles["filled"]])} {...rest}>
-            <span className={cn([styles["inner"]])}>{name}</span>
-        </i>
-    );
+    const isMaterialIcon = type;
+
+    if (isMaterialIcon === "custom") {
+        return (
+            <img
+                ref={ref as React.Ref<HTMLImageElement>}
+                id={id}
+                className={cn([className, styles["custom-icon"]])}
+                src={`/icons/${name}.svg`}
+            />
+        );
+    } else {
+        return (
+            <i ref={ref} id={id} className={cn([className, styles["icon"], filled && styles["filled"]])} {...rest}>
+                <span className={cn([styles["inner"]])}>{name}</span>
+            </i>
+        );
+    }
 });
 
 export default Icon;
