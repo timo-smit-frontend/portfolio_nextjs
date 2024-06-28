@@ -1,6 +1,6 @@
 /** Functions */
 import { cn } from "@/lib/cn";
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 /** Styles */
 import styles from "./Icon.module.scss";
@@ -23,6 +23,16 @@ type IconProps = {
 
 const Icon = forwardRef<HTMLElement, Readonly<IconProps>>(function Icon(props, ref) {
     const { name, id, className, filled, type, ...rest } = props;
+    const [svgContent, setSvgContent] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (type === "custom") {
+            fetch(`/icons/${name}.svg`)
+                .then(response => response.text())
+                .then(data => setSvgContent(data))
+                .catch(error => console.error(`Error loading SVG: ${name}`, error));
+        }
+    }, [name, type]);
 
     if (!name) return null;
 
@@ -30,11 +40,11 @@ const Icon = forwardRef<HTMLElement, Readonly<IconProps>>(function Icon(props, r
 
     if (isMaterialIcon === "custom") {
         return (
-            <img
+            <span
                 ref={ref as React.Ref<HTMLImageElement>}
                 id={id}
                 className={cn([className, styles["custom-icon"]])}
-                src={`/icons/${name}.svg`}
+                dangerouslySetInnerHTML={{ __html: svgContent || "" }}
             />
         );
     } else {

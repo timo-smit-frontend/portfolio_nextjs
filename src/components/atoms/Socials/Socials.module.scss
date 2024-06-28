@@ -3,7 +3,18 @@
     gap: 2rem;
 
     .social-button {
-        margin: 0 0.5rem 0 0;
-        fill: green;
+        &:hover {
+            color: var(--clr-primary-green);
+        }
+        &:hover .social-icon {
+            fill: var(--clr-primary-green);
+        }
+
+        .social-icon {
+            display: flex;
+            margin: 0 0.5rem 0 0;
+            width: 2rem;
+            fill: var(--clr-primary-light-green);
+        }
     }
 }

@@ -19,7 +19,7 @@
     }
 
     .brand {
-        width: 6.25rem;
+        width: 6rem;
         aspect-ratio: 1/1;
         display: block;
         object-fit: contain;
@@ -37,7 +37,11 @@
         left: 1rem;
 
         .icon {
-            color: var(--clr-primary-white);
+            color: var(--clr-primary-light-grey);
+
+            &:hover {
+                color: var(--clr-primary-light-green);
+            }
         }
     }
 

@@ -3,7 +3,6 @@ import { Button } from "@/components/atoms/Button/Button";
 
 /** Styles */
 import styles from "./Socials.module.scss";
-import { Container } from "../Grid/Grid";
 
 interface SocialsProps {
     id: string;
@@ -14,7 +13,8 @@ export default function Socials({ id }: SocialsProps) {
         <div className={styles["socials-container"]}>
             <Button
                 id={`${id}-linkedin-button`}
-                iconClassName={styles["social-button"]}
+                className={styles["social-button"]}
+                iconClassName={styles["social-icon"]}
                 styledAs="link"
                 tagName="a"
                 target="_blank"
@@ -26,7 +26,8 @@ export default function Socials({ id }: SocialsProps) {
             </Button>
             <Button
                 id={`${id}-instagram-button`}
-                iconClassName={styles["social-button"]}
+                className={styles["social-button"]}
+                iconClassName={styles["social-icon"]}
                 styledAs="link"
                 tagName="a"
                 target="_blank"
