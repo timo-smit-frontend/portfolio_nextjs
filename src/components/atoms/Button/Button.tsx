@@ -36,8 +36,6 @@ type BaseProps = {
     paddingX?: "small" | "large";
     /** Aria attributes */
     aria?: AriaAttributes;
-    /** Disabled */
-    disabled?: boolean;
 };
 
 type ButtonProps = BaseProps & {
@@ -74,7 +72,6 @@ export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Readonly
         iconClassName,
         paddingX = "small",
         aria,
-        disabled,
     } = props;
     const { asPath, isReady, pathname } = useRouter();
     const baseClassName = cn([
@@ -136,8 +133,7 @@ export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Readonly
             <Link
                 ref={ref as Ref<HTMLAnchorElement> | undefined}
                 id={id}
-                onClick={!disabled && onClick}
-                aria-disabled={disabled}
+                onClick={onClick}
                 className={computedClassName}
                 href={href}
                 title={title}
@@ -155,11 +151,10 @@ export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Readonly
         return (
             <button
                 ref={ref as Ref<HTMLButtonElement> | undefined}
-                disabled={disabled}
                 id={id}
                 className={computedClassName}
                 type={type}
-                onClick={!disabled ? onClick : undefined}
+                onClick={onClick}
                 title={title}
                 {...aria}
                 form={form}

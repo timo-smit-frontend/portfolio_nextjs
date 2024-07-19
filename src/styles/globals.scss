@@ -5,11 +5,11 @@ html {
     box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
+* {
     box-sizing: inherit;
     transition: 0.2s ease-in-out;
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-primary-green) transparent;
 }
 
 body,
@@ -34,7 +34,13 @@ body {
     scroll-behavior: smooth;
 }
 
-p {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 

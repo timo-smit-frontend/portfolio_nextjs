@@ -1,23 +1,20 @@
-/** Assets */
-import videoBg from "../../../../public/videos/background_video.mp4";
-
-/** Functions */
-
-/** Styles */
+import { Heading } from "../Heading/Heading";
 import styles from "./VideoHeading.module.scss";
 
 type VideoHeadingProps = {
-    /* Page title */
     title: string;
+    videoSource: string;
 };
 
 export default function VideoHeading(props: VideoHeadingProps) {
-    const { title } = props;
+    const { title, videoSource } = props;
     return (
-        <div className={`${styles["video-container"]}`}>
-            <h1 className={`${styles["heading"]}`}>{title}</h1>
-            <div className={`${styles["overlay"]}`}></div>
-            <video className={`${styles["video"]}`} src={videoBg} autoPlay loop muted />
+        <div className={styles["video-container"]}>
+            <Heading.H1 id="page-title" className={styles["heading"]}>
+                {title}
+            </Heading.H1>
+            <div className={styles["overlay"]}></div>
+            <video className={styles["video"]} autoPlay loop muted preload="none" aria-hidden src={videoSource} />
         </div>
     );
 }
