@@ -1,37 +1,38 @@
 .header {
-    left: 50%;
     z-index: 10;
     width: 100%;
-    display: flex;
-    position: fixed;
-    margin-top: 3rem;
-    max-width: 1024px;
-    align-items: center;
-    transform: translateX(-50%);
-    justify-content: space-between;
+    position: absolute;
     color: var(--clr-primary-light-grey);
 
-    .brand {
-        width: 4rem;
-        aspect-ratio: 1/1;
-        display: block;
-        object-fit: contain;
-        object-position: left center;
-        fill: var(--clr-primary-green);
+    .wrapper {
+        width: 100%;
+        display: flex;
+        margin: 3rem auto;
+        max-width: 1024px;
+        align-items: center;
+        justify-content: space-between;
+        .brand {
+            width: 4rem;
+            aspect-ratio: 1/1;
+            display: block;
+            object-fit: contain;
+            object-position: left center;
+            fill: var(--clr-primary-light-grey);
 
-        &:hover {
-            fill: var(--clr-primary-cyan);
+            &:hover {
+                fill: var(--clr-primary-light-green);
+            }
         }
-    }
 
-    .navigation {
-        .navigation-list {
-            display: flex;
-            flex-direction: row;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            gap: 3rem;
+        .navigation {
+            .navigation-list {
+                display: flex;
+                flex-direction: row;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                gap: 3rem;
+            }
         }
     }
 }

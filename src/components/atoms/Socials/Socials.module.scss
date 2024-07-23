@@ -6,18 +6,18 @@
         display: flex;
         gap: 2rem;
         .social-button {
-            &:hover {
-                color: var(--clr-primary-cyan);
-            }
-            &:hover .social-icon {
-                fill: var(--clr-primary-cyan);
-            }
-
             .social-icon {
                 display: flex;
-                margin: 0 0.5rem 0 0;
                 width: 2rem;
-                fill: var(--clr-primary-green);
+                height: 2rem;
+                & path,
+                & ellipse {
+                    fill: var(--clr-primary-green);
+                }
+            }
+            &:hover .social-icon path,
+            &:hover .social-icon ellipse {
+                fill: var(--clr-primary-cyan);
             }
         }
     }
