@@ -1,0 +1,46 @@
+.experience-container {
+    background-color: var(--clr-primary-black);
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 5rem 0;
+        .article {
+            color: var(--clr-primary-light-grey);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            color: white;
+            .skill {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                .visual {
+                    display: block;
+                    width: calc(0.4 * 1024px);
+                    height: 0.5rem;
+                    border-radius: 1rem;
+                    background-color: var(--clr-primary-light-green);
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 1rem;
+                        height: 1rem;
+                        border-radius: 50%;
+                        background-color: var(--clr-primary-cyan);
+                        top: -4px;
+                        position: relative;
+                        left: 97%;
+                    }
+                }
+            }
+        }
+    }
+}

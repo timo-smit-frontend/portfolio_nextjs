@@ -6,9 +6,9 @@
     --fnt-line-height: 1.5;
 
     // Headings
-    --fnt-size-h1: 1.5em;
-    --fnt-size-h2: 1.25em;
-    --fnt-size-h3: 1.125em;
+    --fnt-size-h1: 2em;
+    --fnt-size-h2: 1.5em;
+    --fnt-size-h3: 1.25em;
     --fnt-size-h4: 1em;
     --fnt-weight-heading: bold;
 
@@ -16,12 +16,12 @@
     --symbols: "Material Symbols Outlined";
 
     // Primary color pallette
+    --clr-primary-white: #fff;
     --clr-primary-light-grey: #dce1de;
     --clr-primary-light-green: #9cc5a1;
     --clr-primary-green: #49a078;
     --clr-primary-cyan: #216869;
     --clr-primary-black: #1f2421;
-    --clr-primary-white: #fff;
 
     // States
     --clr-disabled: #898989;

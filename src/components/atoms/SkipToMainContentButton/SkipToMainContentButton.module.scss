@@ -2,11 +2,20 @@
     position: absolute;
     left: 0.5rem;
     top: 0.5rem;
-    transform: translate(-105%, -105%);
     z-index: 999999;
+    font-weight: 600;
+    color: var(--clr-primary-cyan);
+    background-color: var(--clr-primary-white);
+    transform: translate(-105%, -105%);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;
+
+    &:hover {
+        color: var(--clr-primary-black);
+        font-weight: 600;
+        background-color: var(--clr-primary-light-green);
+    }
 
     &:focus-visible {
         transform: translate(0%);

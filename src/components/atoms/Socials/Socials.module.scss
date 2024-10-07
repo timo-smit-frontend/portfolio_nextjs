@@ -1,0 +1,24 @@
+.socials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .button-container {
+        display: flex;
+        gap: 2rem;
+        .social-button {
+            .social-icon {
+                display: flex;
+                width: 2rem;
+                height: 2rem;
+                & path,
+                & ellipse {
+                    fill: var(--clr-primary-green);
+                }
+            }
+            &:hover .social-icon path,
+            &:hover .social-icon ellipse {
+                fill: var(--clr-primary-cyan);
+            }
+        }
+    }
+}

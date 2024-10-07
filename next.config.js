@@ -3,6 +3,18 @@ const nextConfig = {
     reactStrictMode: true,
     webpack(config) {
         config.module.rules.push({
+            test: /\.(mp4|webm|ogg|swf|ogv)$/,
+            use: {
+                loader: "file-loader",
+                options: {
+                    name: "[name].[hash].[ext]",
+                    outputPath: "static/videos/",
+                    publicPath: "/_next/static/videos/",
+                },
+            },
+        });
+
+        config.module.rules.push({
             test: /\.svg$/,
             use: ["@svgr/webpack"],
         });

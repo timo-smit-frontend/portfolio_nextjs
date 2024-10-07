@@ -5,11 +5,11 @@ html {
     box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
+* {
     box-sizing: inherit;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-primary-green) transparent;
 }
 
 body,
@@ -23,7 +23,7 @@ textarea,
     font-family: var(--fnt);
     font-weight: var(--fnt-weight-text);
     line-height: var(--fnt-line-height);
-    color: var(--black);
+    color: var(--clr-primary-black);
     background-color: var(--clr-primary-light-grey);
 }
 
@@ -34,7 +34,13 @@ body {
     scroll-behavior: smooth;
 }
 
-p {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
