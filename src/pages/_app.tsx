@@ -1,13 +1,9 @@
-/** Functions */
-import localFont from "next/font/local";
-
-/** Styles */
 import "@/styles/globals.scss";
 
-/** Types */
+import localFont from "next/font/local";
+
 import type { AppProps } from "next/app";
 import Header from "@/components/molecules/Header/Header";
-import { SkipToMainContentButton } from "@/components/atoms/SkipToMainContentButton/SkipToMainContentButton";
 
 const materialSymbols = localFont({
     variable: "--symbols",
@@ -20,7 +16,6 @@ const materialSymbols = localFont({
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <div className={`app ${materialSymbols.variable}`}>
-            <SkipToMainContentButton />
             <Header id="header" />
             <Component {...pageProps} />
         </div>

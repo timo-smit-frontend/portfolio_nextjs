@@ -21,10 +21,6 @@
         outline: var(--outline-width) solid var(--clr-focus);
         outline-offset: var(--outline-offset);
     }
-
-    &:disabled {
-        cursor: not-allowed;
-    }
 }
 
 /* Padding: Primary & Secondary & Tertiary & Header */
@@ -48,7 +44,7 @@
     }
 
     &.large {
-        padding: 0.375rem 1rem;
+        padding: 0.7rem 1rem;
 
         /* If has children and has icon */
         &:not(.no-children):has(.icon) {
@@ -65,72 +61,54 @@
 
 /* Primary */
 .primary {
-    background-color: var(--clr-blue);
-    border: var(--clr-blue) var(--border-width) solid;
-    color: var(--clr-white);
     text-decoration: none;
+    color: var(--clr-primary-light-green);
+    background-color: transparent;
+    border: 2px solid var(--clr-primary-light-green);
 
     &:hover {
+        border: 2px solid transparent;
         text-decoration: none;
-        background-color: var(--clr-steel-blue);
-        border: var(--clr-steel-blue) var(--border-width) solid;
-    }
-
-    &.button:disabled {
-        background-color: var(--clr-disabled);
-        border: var(--clr-disabled) var(--border-width) solid;
+        color: var(--clr-primary-black);
+        background-color: var(--clr-primary-light-green);
     }
 }
 
 /* Secondary */
 .secondary {
-    background-color: var(--clr-white);
-    border: var(--clr-blue) var(--border-width) solid;
-    color: var(--clr-blue);
+    border: 2px solid var(--clr-primary-light-grey);
     text-decoration: none;
+    color: var(--clr-primary-light-grey);
+    background-color: transparent;
 
-    &:visited,
     &:active {
         text-decoration: none;
-        color: var(--clr-blue);
+        color: var(--clr-primary-black);
     }
 
     &:hover {
-        border-color: var(--clr-blue);
-        background-color: var(--clr-blue);
-        color: var(--clr-white);
-    }
-
-    &.button:disabled {
-        background-color: var(--clr-white);
-        color: var(--clr-disabled);
-        border: var(--clr-disabled) var(--border-width) solid;
+        border: 2px solid transparent;
+        color: var(--clr-primary-black);
+        background-color: var(--clr-primary-light-grey);
     }
 }
 
 /* Tertiary */
 .tertiary {
-    border: var(--clr-grey-400) var(--border-width) solid;
-    background-color: var(--clr-white);
-    color: var(--clr-primary-blue);
     text-decoration: none;
+    border: 2px solid var(--clr-primary-cyan);
+    color: var(--clr-primary-cyan);
+    background-color: transparent;
 
-    &:visited,
     &:active {
         text-decoration: none;
-        color: var(--clr-primary-blue);
+        color: var(--clr-primary-white);
     }
 
     &:hover {
-        background-color: var(--clr-white);
-        border: var(--clr-primary-blue) var(--border-width) solid;
-        color: var(--clr-primary-blue);
-    }
-
-    &.button:disabled {
-        background-color: var(--clr-white);
-        color: var(--clr-disabled);
-        border: var(--clr-disabled) var(--border-width) solid;
+        border: 2px solid transparent;
+        color: var(--clr-primary-white);
+        background-color: var(--clr-primary-cyan);
     }
 }
 
@@ -138,7 +116,7 @@
 .header {
     border: 0;
     border-radius: var(--border-radius);
-    color: var(--clr-primary-blue);
+    color: var(--clr-primary-light-grey);
     font-size: 1.25rem;
     text-decoration: none;
 
@@ -147,8 +125,7 @@
     }
 
     &.active {
-        background-color: var(--clr-active);
-        color: var(--clr-white);
+        color: var(--clr-primary-light-green);
     }
 }
 
@@ -171,17 +148,13 @@
 .return {
     cursor: pointer;
     display: inline;
-    color: var(--clr-black);
+    color: var(--clr-primary-black);
     text-decoration: none;
     position: relative;
     padding: 0;
     margin: 0;
     border: 0;
     background-color: transparent;
-
-    &:disabled {
-        color: var(--clr-disabled);
-    }
 
     &::after {
         content: "";
